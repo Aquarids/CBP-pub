@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cbp"
+version = "0.5.0"
+description = "Capability Bidding Protocol (CBP): adaptive probing and robust peer assessment"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+public-data = ["pyarrow"]
+llm = ["aq-llm-pivot>=0.1.0,<0.3"]
+
+[project.scripts]
+cbp = "cbp.cli:main"
+cbp-replay = "cbp.replay.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
